@@ -22,6 +22,9 @@ namespace FootballScoreboard
 
         public void FinishGame(int id)
         {
+            if (!_games.ContainsKey(id))
+                throw new KeyNotFoundException();
+
             _games.Remove(id);
         }
 
