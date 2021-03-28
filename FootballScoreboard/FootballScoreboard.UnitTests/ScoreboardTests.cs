@@ -131,7 +131,7 @@ namespace FootballScoreboard.UnitTests
 
             var _getSummaryResult =
                 _gamesManager.GetSummary()
-                    .Select(x => new Tuple<string, string, uint, uint>
+                    .Select(x => new ValueTuple<string, string, uint, uint>
                         (x.HomeTeam.Name, x.AwayTeam.Name, x.HomeTeam.Score, x.AwayTeam.Score))
                     .ToList();
 
