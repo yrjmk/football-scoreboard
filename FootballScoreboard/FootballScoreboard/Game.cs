@@ -6,5 +6,11 @@
         public Team HomeTeam { get; set; }
         public Team AwayTeam { get; set; }
         public uint TotalScore { get; set; }
+
+        public Game(string homeTeamName, string awayTeamName)
+        {
+            HomeTeam = new Team(homeTeamName);
+            AwayTeam = new Team(awayTeamName);
+        }
     }
 }
