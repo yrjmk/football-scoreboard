@@ -17,12 +17,12 @@ namespace FootballScoreboard
 
         public void UpdateGameScore(int id, uint homeScore, uint awayScore)
         {
-            throw new NotImplementedException();
+            _games[id].UpdateScore(homeScore, awayScore);
         }
 
         public void FinishGame(int id)
         {
-            throw new NotImplementedException();
+            _games.Remove(id);
         }
 
         public List<Game> GetSummary()
