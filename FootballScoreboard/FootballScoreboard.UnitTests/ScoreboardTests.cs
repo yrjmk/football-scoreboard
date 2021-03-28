@@ -72,8 +72,8 @@ namespace FootballScoreboard.UnitTests
 
         [Test]
         public void UpdateGameScore_ExistingGame_UpdatesScore(
-            [Values(0, 1, 2)] uint homeScore,
-            [Values(3, 4, 5)] uint awayScore)
+            [Values(0u, 1u, 2u)] uint homeScore,
+            [Values(3u, 4u, 5u)] uint awayScore)
         {
             int id = _gamesManager.StartGame("Home Team", "Away Team");
 
