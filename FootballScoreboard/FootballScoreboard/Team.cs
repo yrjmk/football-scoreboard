@@ -1,4 +1,6 @@
-﻿namespace FootballScoreboard
+﻿using System;
+
+namespace FootballScoreboard
 {
     public class Team
     {
@@ -7,6 +9,9 @@
 
         public Team(string name)
         {
+            if (string.IsNullOrWhiteSpace(name))
+                throw new ArgumentException("Name can not be empty.");
+
             Name = name;
             Score = 0;
         }
