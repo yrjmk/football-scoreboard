@@ -30,7 +30,10 @@ namespace FootballScoreboard
 
         public List<Game> GetSummary()
         {
-            return _games.Values.ToList();
+            return _games.Values
+                .OrderByDescending(x => x.Id)
+                .OrderByDescending(x => x.TotalScore)
+                .ToList();
         }
 
         private int GetUniqueId()
