@@ -5,7 +5,7 @@
         public int Id { get; private set; }
         public Team HomeTeam { get; private set; }
         public Team AwayTeam { get; private set; }
-        public uint TotalScore { get; }
+        public uint TotalScore => HomeTeam.Score + AwayTeam.Score;
 
         public Game(int id, string homeTeamName, string awayTeamName)
         {
