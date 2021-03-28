@@ -7,8 +7,9 @@
         public Team AwayTeam { get; set; }
         public uint TotalScore { get; set; }
 
-        public Game(string homeTeamName, string awayTeamName)
+        public Game(int id, string homeTeamName, string awayTeamName)
         {
+            Id = id;
             HomeTeam = new Team(homeTeamName);
             AwayTeam = new Team(awayTeamName);
         }

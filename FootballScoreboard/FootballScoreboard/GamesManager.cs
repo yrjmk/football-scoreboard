@@ -10,8 +10,9 @@ namespace FootballScoreboard
 
         public int StartGame(string homeTeamName, string awayTeamName)
         {
-            _games.Add(0, new Game(homeTeamName, awayTeamName));
-            return 0;
+            int id = GetUniqueId();
+            _games.Add(id, new Game(id, homeTeamName, awayTeamName));
+            return id;
         }
 
         public void UpdateGameScore(int id, uint homeScore, uint awayScore)
@@ -27,6 +28,15 @@ namespace FootballScoreboard
         public List<Game> GetSummary()
         {
             return _games.Values.ToList();
+        }
+
+        private int GetUniqueId()
+        {
+            if (_games.Count == 0)
+                return 1;
+
+            int maxId = _games.Keys.Max();
+            return maxId + 1;
         }
     }
 }
